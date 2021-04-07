@@ -9,7 +9,8 @@ require('dotenv').config()
 
 //create a web application by calling the function express (which contains the whole package)
 const app = express()
-app.listen(3000, () => console.log('listening at 3000'))
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`Starting server at ${port}`))
 //using express to host static files => server serves any file in the 'public' folder
 app.use(express.static('public'))
 //parse any incoming data as JSON
